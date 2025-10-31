@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <div className="h-screen flex flex-col lg:flex-row">
       {/* Contenedor izquierdo - visible solo en pantallas grandes */}
-      <div className="hidden lg:flex lg:w-1/2 bg-emerald-600 justify-center items-center text-white text-2xl font-bold">
+      <div className="hidden lg:flex lg:w-1/2 bg-emerald-600 justify-center items-center text-white text-3xl font-bold">
         Bienvenido a EasyOrder
       </div>
 
@@ -39,33 +39,33 @@ const Login = () => {
     <h2 class=" text-center text-2xl/9 font-bold  text-gray-500">Ingresa a tu cuenta</h2>
     <form action="#" method="POST" class="space-y-6">
       <div>
-        <label for="email" class="block text-sm/6 font-medium text-emerald-500">Email</label>
+        <label for="email" class="block lg:text-xl text-sm/6 font-medium text-emerald-500">Email</label>
         <div class="mt-2">
-          <input id="email" type="email" name="email" required autocomplete="email" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-emerald-500 outline-1 -outline-offset-1 outline-white/10 border-2 border-emerald-500 placeholder:text-emerald-500 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-500 sm:text-sm/6" />
+          <input id="email" type="email" name="email" required autocomplete="email" class="block w-full rounded-md bg-white/5 px-3 py-1.5 lg:text-xl text-base text-emerald-500 outline-1 -outline-offset-1 outline-white/10 border-2 border-emerald-500 placeholder:text-emerald-500 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-500 sm:text-sm/6" />
         </div>
       </div>
 
       <div>
         <div class="flex items-center justify-between">
-          <label for="password" class="block text-sm/6 font-medium text-emerald-500">Contraseña</label>
+          <label for="password" class="block lg:text-xl text-sm/6 font-medium text-emerald-500">Contraseña</label>
           
         </div>
         <div class="mt-2">
-          <input id="password" type="password" name="password" required autocomplete="current-password" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-emerald-500 outline-1 -outline-offset-1 outline-white/10 border-2 border-emerald-500 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-500 sm:text-sm/6" />
+          <input id="password" type="password" name="password" required autocomplete="current-password" class="block lg:text-xl w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-emerald-500 outline-1 -outline-offset-1 outline-white/10 border-2 border-emerald-500 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-500 sm:text-sm/6" />
         </div>
-        <div class="text-sm">
-            <a href="#" class=" text-gray-400 hover:text-emerald-500">Olvidaste la contraseña?</a>
+        <div class="lg:text-xl text-sm">
+            <a href="#" class=" text-gray-400 lg:text-xl hover:text-emerald-500">Olvidaste la contraseña?</a>
           </div>
       </div>
 
       <div>
-        <button onClick={() => navigate("/home")} type="submit" class="flex w-full justify-center rounded-md bg-emerald-500 px-3 py-1.5 text-sm/6 font-semibold text-emerald-100 hover:bg-emerald-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500">Ingresar</button>
+        <button onClick={() => navigate("/home")} type="submit" class="flex w-full lg:text-xl justify-center rounded-md bg-emerald-500 px-3 py-1.5 lg:text-xl text-sm/6 font-semibold text-emerald-100 hover:bg-emerald-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500">Ingresar</button>
       </div>
     </form>
 
-    <p class="mt-10 text-center text-sm/6 text-gray-400">
+    <p class="mt-10 text-center lg:text-xl text-sm/6 text-gray-400">
       No tenes cuenta?
-      <button onClick={() => setActiveTab("register")} class="font-semibold text-emerald-400 hover:text-emerald-500">Registrate</button>
+      <button onClick={() => setActiveTab("register")} class="font-semibold  text-emerald-400 hover:text-emerald-500">Registrate</button>
     </p>
   </div>)}
   {activeTab === "register" && (
@@ -73,39 +73,39 @@ const Login = () => {
     <h2 class=" text-center text-2xl/9 font-bold  text-gray-500">Crear cuenta</h2>
     <form action="#" method="POST" class="space-y-6">
       <div>
-        <label for="email" class="block text-sm/6 font-medium text-emerald-500">Email</label>
+        <label for="email" class="block lg:text-xl  text-sm/6 font-medium text-emerald-500">Email</label>
         <div class="mt-2">
-          <input id="email" type="email" name="email" required autocomplete="email" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-emerald-500 outline-1 -outline-offset-1 outline-white/10 border-2 border-emerald-500 placeholder:text-emerald-500 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-500 sm:text-sm/6" />
+          <input id="email" type="email" name="email" required autocomplete="email" class="block w-full lg:text-xl rounded-md bg-white/5 px-3 py-1.5 text-base text-emerald-500 outline-1 -outline-offset-1 outline-white/10 border-2 border-emerald-500 placeholder:text-emerald-500 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-500 sm:text-sm/6" />
         </div>
       </div>
 
       <div>
         <div class="flex items-center justify-between">
-          <label for="password" class="block text-sm/6 font-medium text-emerald-500">Contraseña</label>
+          <label for="password" class="block lg:text-xl text-sm/6 font-medium text-emerald-500">Contraseña</label>
           
         </div>
         <div class="mt-2">
-          <input id="password" type="password" name="password" required autocomplete="current-password" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-emerald-500 outline-1 -outline-offset-1 outline-white/10 border-2 border-emerald-500 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-500 sm:text-sm/6" />
+          <input id="password" type="password" name="password" required autocomplete="current-password" class="block w-full lg:text-xl rounded-md bg-white/5 px-3 py-1.5 text-base text-emerald-500 outline-1 -outline-offset-1 outline-white/10 border-2 border-emerald-500 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-500 sm:text-sm/6" />
         </div>
        
       </div>
       <div>
         <div class="flex items-center justify-between">
-          <label for="password" class="block text-sm/6 font-medium text-emerald-500">Repetir contraseña</label>
+          <label for="password" class="block lg:text-xl text-sm/6 font-medium text-emerald-500">Repetir contraseña</label>
           
         </div>
         <div class="mt-2">
-          <input id="password" type="password" name="password" required autocomplete="current-password" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-emerald-500 outline-1 -outline-offset-1 outline-white/10 border-2 border-emerald-500 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-500 sm:text-sm/6" />
+          <input id="password" type="password" name="password" required autocomplete="current-password" class="block lg:text-xl w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-emerald-500 outline-1 -outline-offset-1 outline-white/10 border-2 border-emerald-500 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-500 sm:text-sm/6" />
         </div>
        
       </div>
 
       <div>
-        <button onClick={() => navigate("/home")} type="submit" class="flex w-full justify-center rounded-md bg-emerald-500 px-3 py-1.5 text-sm/6 font-semibold text-emerald-100 hover:bg-emerald-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500">Sign in</button>
+        <button onClick={() => navigate("/home")} type="submit" class="flex w-full justify-center rounded-md bg-emerald-500 lg:text-xl px-3 py-1.5 text-sm/6 font-semibold text-emerald-100 hover:bg-emerald-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500">Crear</button>
       </div>
     </form>
 
-    <p class="mt-4 text-center text-sm/6 text-gray-400">
+    <p class="mt-4 text-center lg:text-xl text-sm/6 text-gray-400">
       Ya tenes cuenta?
       <button onClick={() => setActiveTab("login")} class="font-semibold text-emerald-400 hover:text-emerald-500">Inicia sesión</button>
     </p>
