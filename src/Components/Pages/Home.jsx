@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Card from "./Card";
 import Carousel from "./Carousel";
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState("home");
+    const seccionRef = useRef(null);
+   const irASeccion = () => {
+    seccionRef.current.scrollIntoView({
+      behavior: 'smooth', // hace el scroll suave
+      block: 'start'      // alinea al inicio de la sección
+    });
+  };
   return (
     <div class="flex flex-col min-h-screen bg-slate-100">
       <header className="bg-emerald-500">
@@ -205,9 +212,16 @@ const Home = () => {
 
 
         {activeTab === "products" && (
-          <div>
-
-            <div className="border-2 border-slate-300 mt-4 mb-4 grid cols-1 rounded-full p-2 bg-white ">
+          <div >
+            <button onClick={irASeccion} className="fixed bottom-0 right-0 pr-4 pb-4  ">
+              <h2 className="bg-emerald-300 rounded-full pl-2 pr-2 flex justify-center items-center aspect-[4/4]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
+                </svg>
+              </h2>
+            </button>
+            <section ref={seccionRef} className="border-2 border-slate-300 mt-4  grid cols-1 rounded-full p-2 bg-white ">
               <div className="w-full flex justify-center items-center rounded-xl">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-emerald-5 rounded-xl">
                   <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
@@ -215,9 +229,9 @@ const Home = () => {
                 <input type="text" className="w-full  rounded-xl p-2" />
               </div>
 
-            </div>
-          
-      
+            </section>
+
+
             <div className="flex justify-around pt-4 pb-4" >
               <div className="flex justify-center items-center pt-4 pb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-emerald-500">
@@ -261,8 +275,38 @@ const Home = () => {
                 <h2 >Ofertas</h2>
               </div>
             </div>
-  <div className=" border-2 border-t-2 border-b-0 border-r-0 border-l-0 h-20 bg-gradient-to-b from-gray-300"></div>
-            <div className="flex justify-between pt-4 pb-4 ">
+
+
+            <div className=" border-2 border-t-2 border-b-0 border-r-0 border-l-0  bg-gradient-to-b from-gray-300 pb-4">
+
+              <div className="flex justify-around pt-2 pb-2 lg:text-base text-sm" >
+                <button className="lg:w-[100px] w-[85px] flex justify-center items-center p-2 border-2 border-slate-300 rounded-full bg-white text-slate-500">
+                  <h2>Gaseosas</h2>
+                </button>
+                <button className="lg:w-[100px] w-[85px] flex justify-center items-center p-2  border-2 border-slate-300 rounded-full bg-white text-slate-500">
+                  <h2>Aguas</h2>
+                </button>
+                <button className="lg:w-[100px] w-[85px] flex justify-center items-center p-2  border-2 border-slate-300 rounded-full bg-white text-slate-500">
+                  <h2>Saborizadas</h2>
+                </button>
+
+              </div>
+              <div className="flex justify-around pt-2 pb-2 lg:text-base text-sm" >
+
+                <button className="lg:w-[100px] w-[85px] flex justify-center items-center p-2  border-2 border-slate-300 rounded-full bg-white text-slate-500">
+                  <h2>Deportivas</h2>
+                </button>
+                <button className="lg:w-[100px] w-[85px] flex justify-center items-center p-2  border-2 border-slate-300 rounded-full bg-white text-slate-500">
+                  <h2>Energéticas</h2>
+
+                </button>
+                <button className="lg:w-[100px] w-[85px] flex justify-center items-center p-2  border-2 border-slate-300 rounded-full bg-white text-slate-500">
+                  <h2>Jugos</h2>
+                </button>
+              </div>
+            </div>
+
+            <div className="flex justify-between pt-4 pb-4 pl-2 pr-2 ">
               <h2 className="text-emerald-400 font-bold lg:text-xl text-base">Catálogo de productos</h2>
               <div className="border-2 border-slate-300 p-2 rounded-xl flex flex-row">
 
