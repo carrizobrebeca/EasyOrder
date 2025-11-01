@@ -1,8 +1,11 @@
 import React, { useRef, useState } from "react";
 import Card from "./Card";
 import Carousel from "./Carousel";
+import CardSale from "./CardSale";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+    const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("home");
     const seccionRef = useRef(null);
    const irASeccion = () => {
@@ -150,7 +153,7 @@ const Home = () => {
             <div className="flex justify-center items-center pt-4">
               <div className="grid lg:grid-cols-2 lg:gap-4 grid-cols-1 gap-4 ">
                 <div className="bg-white rounded-xl border-2 b-slate-300 w-[200px] h-[60px] text-emerald-600">
-                  <div className="flex justify-center items-center pt-4 pb-4">
+                  <div className="flex justify-center items-center pt-4 pb-4" onClick={() => navigate("/combo")}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-emerald-500">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
                       <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
@@ -182,7 +185,7 @@ const Home = () => {
               <div className="w-full grid lg:grid-cols-4 lg:gap-6 grid-cols-1 gap-2">
 
                 <div className="flex justify-center items-center">
-                  <Card />
+                  <CardSale />
                 </div>
                 <div className="flex justify-center items-center">
                   <Card />
@@ -240,7 +243,7 @@ const Home = () => {
                 <h2 >Novedades</h2>
               </div>
 
-              <div className="flex justify-center items-center pt-4 pb-4">
+              <div className="flex justify-center items-center pt-4 pb-4" onClick={() => navigate("/combo")}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-emerald-500">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
