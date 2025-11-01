@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <div className="h-screen flex flex-col lg:flex-row">
       {/* Contenedor izquierdo - visible solo en pantallas grandes */}
-      <div className="hidden lg:flex lg:w-1/2 bg-emerald-600 justify-center items-center text-white text-3xl font-bold">
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% justify-center items-center text-white text-3xl font-bold">
         Bienvenido a EasyOrder
       </div>
 

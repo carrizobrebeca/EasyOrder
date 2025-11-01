@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import Card from "./Card";
+import Carousel from "./Carousel";
 
 const Home = () => {
+  const [activeTab, setActiveTab] = useState("home");
   return (
     <div class="flex flex-col min-h-screen bg-slate-100">
       <header className="bg-emerald-500">
@@ -23,7 +26,7 @@ const Home = () => {
               </svg>
             </h2>
 
-            <h2 className="text-emerald-100 fon-bold lg:text-3xl text-sm p-2">
+            <h2 className="text-emerald-100 font-bold lg:text-3xl text-sm p-2">
               EasyOrder
             </h2>
           </div>
@@ -76,21 +79,170 @@ const Home = () => {
       </header>
 
       <main class="flex-1 lg:pl-[200px] lg:pr-[200px] lg:pb-10 lg:pt-10 p-4 overflow-hidden h-fullscreen">
-        <div>
-          <h2 className="font-bold text-emerald-700 ">
-            Hola, Nombre de Usuario!{" "}
-          </h2>
-          <h3 className="text-emerald-700">
-            Dirección: <span className="font-bold">djaskdasdssdakdsk</span>
-          </h3>
-        </div>
-        <div className="bg-emerald-700 mt-4 mb-4 ">
-          <h2 className="text-emerald-100 h-[100px]">Publicidad</h2>
-        </div>
-        <div className="flex justify-center items-center">
-          <div className="grid lg:grid-cols-3 lg:gap-4 grid-cols-1 gap-4 ">
-           
-           <div className="bg-white rounded-xl border-2 b-slate-300 w-[200px] h-[60px] text-emerald-600">
+        {activeTab === "home" && (
+          <div>
+            <div>
+              <h2 className="font-bold text-emerald-700 ">
+                Hola, Nombre de Usuario!
+              </h2>
+              <h3 className="text-emerald-700">
+                Dirección: <span className="font-bold">djaskdasdssdakdsk</span>
+              </h3>
+            </div>
+            <div className="bg-emerald-700 mt-4 mb-4 ">
+              <Carousel />
+            </div>
+            <div className="flex justify-center items-center">
+              <div className="grid lg:grid-cols-3 lg:gap-4 grid-cols-1 gap-4 ">
+
+                <div className="bg-white rounded-xl border-2 b-slate-300 w-[200px] h-[60px] text-emerald-600">
+                  <div className="flex justify-center items-center pt-4 pb-4">
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-emerald-500">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+
+
+                    <h2 >Realizar pedido</h2>
+                  </div>
+                </div>
+                <div className="bg-white rounded-xl border-2 b-slate-300 w-[200px] h-[60px] text-emerald-600">
+                  <div className="flex justify-center items-center pt-4 pb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-emerald-500">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                    </svg>
+
+
+                    <h2 >Mis pedidos</h2>
+                  </div>
+                </div>
+                <div className="bg-white rounded-xl border-2 b-slate-300 w-[200px] h-[60px] text-emerald-600">
+                  <div className="flex justify-center items-center pt-4 pb-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      className="size-6 text-emerald-500"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.99 14.993 6-6m6 3.001c0 1.268-.63 2.39-1.593 3.069a3.746 3.746 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043 3.745 3.745 0 0 1-3.068 1.593c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.297 3.746 3.746 0 0 1-1.593-3.068c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.297 3.745 3.745 0 0 1 3.296-1.042 3.745 3.745 0 0 1 3.068-1.594c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.297 3.746 3.746 0 0 1 1.593 3.068ZM9.74 9.743h.008v.007H9.74v-.007Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm4.125 4.5h.008v.008h-.008v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                      />
+                    </svg>
+
+                    <h2 >Ofertas</h2>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div className="flex justify-center items-center pt-4">
+              <div className="grid lg:grid-cols-2 lg:gap-4 grid-cols-1 gap-4 ">
+                <div className="bg-white rounded-xl border-2 b-slate-300 w-[200px] h-[60px] text-emerald-600">
+                  <div className="flex justify-center items-center pt-4 pb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-emerald-500">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
+                    </svg>
+
+
+                    <h2 >Combos</h2>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl border-2 b-slate-300 w-[200px] h-[60px] text-emerald-600">
+                  <div className="flex justify-center items-center pt-4 pb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-emerald-500">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
+                    </svg>
+                    <h2 >Novedades</h2>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div className="flex justify-start pt-4 pb-4">
+              <h2 className="text-emerald-400 font-bold lg:text-xl text-base">Productos sugeridos según tus últimas compras</h2>
+            </div>
+
+            <div className="w-full flex justify-between">
+              <div className="w-full grid lg:grid-cols-4 lg:gap-6 grid-cols-1 gap-2">
+
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+
+              </div>
+            </div>
+
+            <div className="flex justify-end pt-4 pb-4">
+              <div className='flex justify-center items-center ' >
+                <div className='flex justify-center items-center p-2 bg-red-500 rounded-xl text-white m-2 font-bold'>
+                  <button className=''>Agregar Todos </button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                  </svg>
+                </div>
+                <button className='p-2 border-2 border-emerald-500 rounded-xl text-emerald-500 m-2 font-bold' onClick={() => setActiveTab("products")}>Todos los productos</button>
+              </div>
+            </div>
+
+          </div>)}
+
+
+        {activeTab === "products" && (
+          <div>
+
+            <div className="border-2 border-slate-300 mt-4 mb-4 grid cols-1 rounded-full p-2 bg-white ">
+              <div className="w-full flex justify-center items-center rounded-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-emerald-5 rounded-xl">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+                <input type="text" className="w-full  rounded-xl p-2" />
+              </div>
+
+            </div>
+          
+      
+            <div className="flex justify-around pt-4 pb-4" >
+              <div className="flex justify-center items-center pt-4 pb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-emerald-500">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
+                </svg>
+                <h2 >Novedades</h2>
+              </div>
+
+              <div className="flex justify-center items-center pt-4 pb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-emerald-500">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
+                </svg>
+                <h2 >Combos</h2>
+              </div>
+
+              <div className="flex justify-center items-center pt-4 pb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-emerald-500">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+
+                <h2 >Sugeridos</h2>
+              </div>
+
               <div className="flex justify-center items-center pt-4 pb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -106,98 +258,72 @@ const Home = () => {
                     d="m8.99 14.993 6-6m6 3.001c0 1.268-.63 2.39-1.593 3.069a3.746 3.746 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043 3.745 3.745 0 0 1-3.068 1.593c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.297 3.746 3.746 0 0 1-1.593-3.068c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.297 3.745 3.745 0 0 1 3.296-1.042 3.745 3.745 0 0 1 3.068-1.594c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.297 3.746 3.746 0 0 1 1.593 3.068ZM9.74 9.743h.008v.007H9.74v-.007Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm4.125 4.5h.008v.008h-.008v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
                   />
                 </svg>
-
                 <h2 >Ofertas</h2>
               </div>
             </div>
-            <div className="bg-white rounded-xl border-2 b-slate-300 w-[200px] h-[60px] text-emerald-600">
-              <div className="flex justify-center items-center pt-4 pb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="size-6 text-emerald-500"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m8.99 14.993 6-6m6 3.001c0 1.268-.63 2.39-1.593 3.069a3.746 3.746 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043 3.745 3.745 0 0 1-3.068 1.593c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.297 3.746 3.746 0 0 1-1.593-3.068c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.297 3.745 3.745 0 0 1 3.296-1.042 3.745 3.745 0 0 1 3.068-1.594c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.297 3.746 3.746 0 0 1 1.593 3.068ZM9.74 9.743h.008v.007H9.74v-.007Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm4.125 4.5h.008v.008h-.008v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
-                  />
+  <div className=" border-2 border-t-2 border-b-0 border-r-0 border-l-0 h-20 bg-gradient-to-b from-gray-300"></div>
+            <div className="flex justify-between pt-4 pb-4 ">
+              <h2 className="text-emerald-400 font-bold lg:text-xl text-base">Catálogo de productos</h2>
+              <div className="border-2 border-slate-300 p-2 rounded-xl flex flex-row">
+
+                <button >Ordenar</button>
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                 </svg>
 
-                <h2 >Ofertas</h2>
-              </div>
-            </div>
-            <div className="bg-white rounded-xl border-2 b-slate-300 w-[200px] h-[60px] text-emerald-600">
-              <div className="flex justify-center items-center pt-4 pb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="size-6 text-emerald-500"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m8.99 14.993 6-6m6 3.001c0 1.268-.63 2.39-1.593 3.069a3.746 3.746 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043 3.745 3.745 0 0 1-3.068 1.593c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.297 3.746 3.746 0 0 1-1.593-3.068c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.297 3.745 3.745 0 0 1 3.296-1.042 3.745 3.745 0 0 1 3.068-1.594c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.297 3.746 3.746 0 0 1 1.593 3.068ZM9.74 9.743h.008v.007H9.74v-.007Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm4.125 4.5h.008v.008h-.008v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
-                  />
-                </svg>
 
-                <h2 >Ofertas</h2>
               </div>
-            </div>
-            
-          </div>
-        </div>
-        <div className="flex justify-center items-center pt-4">
-          <div className="grid lg:grid-cols-2 lg:gap-4 grid-cols-1 gap-4 ">
-          <div className="bg-white rounded-xl border-2 b-slate-300 w-[200px] h-[60px] text-emerald-600">
-              <div className="flex justify-center items-center pt-4 pb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="size-6 text-emerald-500"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m8.99 14.993 6-6m6 3.001c0 1.268-.63 2.39-1.593 3.069a3.746 3.746 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043 3.745 3.745 0 0 1-3.068 1.593c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.297 3.746 3.746 0 0 1-1.593-3.068c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.297 3.745 3.745 0 0 1 3.296-1.042 3.745 3.745 0 0 1 3.068-1.594c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.297 3.746 3.746 0 0 1 1.593 3.068ZM9.74 9.743h.008v.007H9.74v-.007Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm4.125 4.5h.008v.008h-.008v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
-                  />
-                </svg>
 
-                <h2 >Ofertas</h2>
-              </div>
             </div>
 
-            <div className="bg-white rounded-xl border-2 b-slate-300 w-[200px] h-[60px] text-emerald-600">
-              <div className="flex justify-center items-center pt-4 pb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="size-6 text-emerald-500"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m8.99 14.993 6-6m6 3.001c0 1.268-.63 2.39-1.593 3.069a3.746 3.746 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043 3.745 3.745 0 0 1-3.068 1.593c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.297 3.746 3.746 0 0 1-1.593-3.068c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.297 3.745 3.745 0 0 1 3.296-1.042 3.745 3.745 0 0 1 3.068-1.594c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.297 3.746 3.746 0 0 1 1.593 3.068ZM9.74 9.743h.008v.007H9.74v-.007Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm4.125 4.5h.008v.008h-.008v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
-                  />
-                </svg>
+            <div className="w-full flex justify-between pt-2">
+              <div className="w-full grid lg:grid-cols-4 lg:gap-6 grid-cols-1 gap-2">
 
-                <h2 >Ofertas</h2>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+                <div className="flex justify-center items-center">
+                  <Card />
+                </div>
+
               </div>
             </div>
-          </div>
-        </div>
+
+
+
+          </div>)}
       </main>
 
       <footer className="flex justify-center items-center bg-emerald-500 bottom-0 text-emerald-300">
