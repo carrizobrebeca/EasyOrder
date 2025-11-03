@@ -1,10 +1,10 @@
 
 
 import { useNavigate } from "react-router-dom";
-import CardCombo from "./CardCombo";
+
 import CardOfertas from "./CardOfertas";
 
-const Combo = () => {
+const Ofertas = () => {
     const navigate = useNavigate();
     
    
@@ -99,4 +99,4 @@ const Combo = () => {
   );
 };
 
-export default Combo;
+export default Ofertas;

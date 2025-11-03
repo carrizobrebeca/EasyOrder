@@ -1,15 +1,14 @@
 
 
 import { useNavigate } from "react-router-dom";
-import CardCombo from "./CardCombo";
-import CardOfertas from "./CardOfertas";
 
-const Combo = () => {
+import CardSale from "./CardSale";
+
+const Ofertas = () => {
     const navigate = useNavigate();
     
-   
   return (
-    <div class="flex flex-col min-h-screen bg-slate-100">
+     <div class="flex flex-col min-h-screen bg-slate-100">
       <header className="bg-emerald-500">
         <div className="flex justify-between items-center pl-2">
           <div className="flex justify-start items-center pl-2 p-2 cursor-pointer" onClick={() => navigate("/home")}>
@@ -60,16 +59,16 @@ const Combo = () => {
               <div className="w-full grid lg:grid-cols-2 lg:gap-4 grid-cols-1 gap-2">
 
                 <div className="flex justify-center items-center">
-                  <CardOfertas />
+                  <CardSale />
                 </div>
                 <div className="flex justify-center items-center">
-                  <CardOfertas />
+                  <CardSale />
                 </div>
                 <div className="flex justify-center items-center">
-                   <CardOfertas />
+                   <CardSale />
                 </div>
                 <div className="flex justify-center items-center">
-                   <CardOfertas />
+                   <CardSale />
                 </div>
 
               </div>
@@ -99,4 +98,4 @@ const Combo = () => {
   );
 };
 
-export default Combo;
+export default Ofertas;

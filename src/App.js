@@ -4,6 +4,10 @@ import Landing from './Components/Views/Landing';
 import Login from './Components/Views/Login';
 import Home from './Components/Pages/Home';
 import Combo from "./Components/Pages/Combo";
+import Order from "./Components/Pages/Order";
+import Ofertas from "./Components/Pages/Ofertas";
+import OldOrders from "./Components/Pages/OldOrders";
+import DetailOldOrder from "./Components/Pages/DetailOldOrder";
 
 function App() {
   return (
@@ -14,6 +18,10 @@ function App() {
 
         <Route path="/home" element={<Home />} />
          <Route path="/combo" element={<Combo />} />
+         <Route path="/order" element={<Order />} />
+             <Route path="/ofertas" element={<Ofertas />} />
+             <Route path="/historial" element={<OldOrders />} />
+             <Route path="/historial/detalle" element={<DetailOldOrder/>} />
       </Routes>
     </Router>
   );
