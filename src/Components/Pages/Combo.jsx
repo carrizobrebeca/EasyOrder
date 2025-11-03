@@ -37,19 +37,38 @@ const Combo = () => {
 
           
         </div>
+        <div className="bg-slate-100 pt-4">
+            <div className="flex justify-start items-center pb-4  border-b-2  border-t-0 border-r-0 border-l-0">
+              <button
+                className="font-bold text-emerald-700 lg:text-3xl text-sm  pl-4"
+                onClick={() => navigate("/pedido")}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+                  />
+                </svg>
+              </button>
+              <h2 className="font-bold text-emerald-700 lg:text-3xl text-sm  pl-4">
+               Combos
+              </h2>
+            </div>
+          </div>
       </header>
 
       <main class="flex-1 lg:pl-[200px] lg:pr-[200px] lg:pb-10 lg:pt-10 p-4 overflow-hidden h-fullscreen">
        
           <div>
-            <div>
-              <h2 className="font-bold text-emerald-700 ">
-                Hola, Nombre de Usuario!
-              </h2>
-              <h3 className="text-emerald-700">
-                Dirección: <span className="font-bold">djaskdasdssdakdsk</span>
-              </h3>
-            </div>
+           
            
 
             <div className="flex justify-start pt-4 pb-4">

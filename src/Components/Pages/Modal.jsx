@@ -41,7 +41,7 @@ const Modal = ({onClose}) => {
                         </div>
                         <div className='bg-slate-100 rounded-xl p-2 mt-6  shadow-md'>
                             <div className='flex justify-center items-center'>
-                                <button onClick={() => navigate("/order")} className='bg-red-400 p-2 text-white rounded-xl shadow-md'>Iniciar pedido</button>
+                                <button onClick={() => navigate("/pedido")} className='bg-red-400 p-2 text-white rounded-xl shadow-md'>Iniciar pedido</button>
                             </div>
                         </div>
                     </div>
